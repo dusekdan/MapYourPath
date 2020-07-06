@@ -7,6 +7,12 @@ local function TimeInfo_Repeater()
     C_Timer.After(3, TimeInfo_Repeater)
 end
 
+local function PositionInfo_Repeater()
+    SetMapToCurrentZone(); 
+    local x,y=GetPlayerMapPosition("player"); -- DEFAULT_CHAT_FRAME:AddMessage(format("%s, %s: %.1f, %.1f",GetZoneText(),GetSubZoneText(),x*100,y*100))
+    print("WorldPosition x=" .. x .. ",y=" .. y .. " in zone " .. GetZoneText() .. ", " .. GetSubZoneText())
+end
+
 -- Initialize once - when the player logs in
 local TimeInfoRepeater_EventFrame = CreateFrame("Frame")
 TimeInfoRepeater_EventFrame:RegisterEvent("PLAYER_LOGIN")
