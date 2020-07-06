@@ -1,10 +1,21 @@
--- Test with player movement detection
+-- Test repeating task after a time period
+local function TimeInfo_Repeater()
+    print(os.date("%Y-%m-%d_%H:%M:%S"))
+    C_Timer.After(3, TimeInfo_Repeater)
+end
 
+TimeInfo_Repeater()
+
+-- Test with player movement detection
 local InformMovement_EventFrame = CreateFrame("Frame")
 InformMovement_EventFrame:RegisterEvent("PLAYER_STARTED_MOVING")
 InformMovement_EventFrame:RegisterEvent("PLAYER_STOPPED_MOVING")
 InformMovement_EventFrame:SetScript("OnEvent", 
     function (self, event, ...)
+        
+        -- Prevent Addon from spamming console
+        return "Nothing"
+        
         if (event == "PLAYER_STARTED_MOVING")
         then
             print("HA! You have started moving, my friend!")
@@ -15,6 +26,8 @@ InformMovement_EventFrame:SetScript("OnEvent",
             print("You've stoppped moving just now.")
         end
     end)
+-- Conclusion: Works well. It starts and stop movement probably every frame or something, because the
+-- messages just rotate "ha you started..you've stopped". 
 
 -- Basic even-handling code would look like this
 -- 1. Create new frame for event handlign
