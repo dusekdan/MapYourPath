@@ -10,7 +10,7 @@ TimeInfoRepeater_EventFrame:SetScript("OnEvent",
     end)
 
 local function TimeInfo_Repeater()
-    print(os.date("%Y-%m-%d_%H:%M:%S"))
+    print(date("%Y-%m-%d_%H:%M:%S"))
     C_Timer.After(3, TimeInfo_Repeater)
 end
 
