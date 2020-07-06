@@ -19,7 +19,8 @@ TimeInfoRepeater_EventFrame:RegisterEvent("PLAYER_LOGIN")
 TimeInfoRepeater_EventFrame:SetScript("OnEvent", 
     function(self, event, ...)
         print("Player logged on. Starting a time repeater ticker now.")
-        C_Timer.After(3, TimeInfo_Repeater)
+        C_Timer.After(15, TimeInfo_Repeater)
+        C_Timer.After(3, PositionInfo_Repeater)
     end)
 
 
