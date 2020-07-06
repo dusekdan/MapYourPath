@@ -1,0 +1,6 @@
+## Interface: 80300
+## Title: Map Your Path in WoW
+## Notes: Logs every coordinates of every place you have visited. Can be plotted into the world map (or made interactive) to see your entire journey.
+## Author: danieldusek.com
+## Version: 0.1
+main.lua
