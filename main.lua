@@ -1,5 +1,12 @@
 -- Test repeating task after a time period
 
+local function TimeInfo_Repeater()
+    print("TimeInfo Repeater called")
+    print(date())
+    print(date("%Y-%m-%d_%H:%M:%S"))
+    C_Timer.After(3, TimeInfo_Repeater)
+end
+
 -- Initialize once - when the player logs in
 local TimeInfoRepeater_EventFrame = CreateFrame("Frame")
 TimeInfoRepeater_EventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -9,10 +16,6 @@ TimeInfoRepeater_EventFrame:SetScript("OnEvent",
         C_Timer.After(3, TimeInfo_Repeater)
     end)
 
-local function TimeInfo_Repeater()
-    print(date("%Y-%m-%d_%H:%M:%S"))
-    C_Timer.After(3, TimeInfo_Repeater)
-end
 
 -- Test with player movement detection
 --local InformMovement_EventFrame = CreateFrame("Frame")
