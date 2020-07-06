@@ -7,25 +7,25 @@ end
 TimeInfo_Repeater()
 
 -- Test with player movement detection
-local InformMovement_EventFrame = CreateFrame("Frame")
-InformMovement_EventFrame:RegisterEvent("PLAYER_STARTED_MOVING")
-InformMovement_EventFrame:RegisterEvent("PLAYER_STOPPED_MOVING")
-InformMovement_EventFrame:SetScript("OnEvent", 
-    function (self, event, ...)
-        
-        -- Prevent Addon from spamming console
-        return "Nothing"
-        
-        if (event == "PLAYER_STARTED_MOVING")
-        then
-            print("HA! You have started moving, my friend!")
-        end
-
-        if (event == "PLAYER_STOPPED_MOVING")
-        then
-            print("You've stoppped moving just now.")
-        end
-    end)
+--local InformMovement_EventFrame = CreateFrame("Frame")
+--InformMovement_EventFrame:RegisterEvent("PLAYER_STARTED_MOVING")
+--InformMovement_EventFrame:RegisterEvent("PLAYER_STOPPED_MOVING")
+--InformMovement_EventFrame:SetScript("OnEvent", 
+--    function (self, event, ...)
+--        
+--        -- Prevent Addon from spamming console
+--        return "Nothing"
+--        
+--        if (event == "PLAYER_STARTED_MOVING")
+--        then
+--            print("HA! You have started moving, my friend!")
+--        end
+--
+--        if (event == "PLAYER_STOPPED_MOVING")
+--        then
+--            print("You've stoppped moving just now.")
+--        end
+--    end)
 -- Conclusion: Works well. It starts and stop movement probably every frame or something, because the
 -- messages just rotate "ha you started..you've stopped". 
 
